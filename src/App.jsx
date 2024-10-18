@@ -1,14 +1,20 @@
 import "./App.css";
-
-function MyButton() {
-  return <button className="my-button">I'm a button</button>;
-}
+import { BoardComponent } from "./components/BoardComponent";
+import { TimerComponent } from "./components/TimerComponent";
 
 function App() {
+  function restart() {
+    console.log("Game restarted");
+  }
+
+  const player = {
+    color: "black",
+  };
+
   return (
     <div className="App">
-      <h1>Welcome to my app</h1>
-      <MyButton />
+      <TimerComponent currentPlayer={player} restart={restart} />
+      <BoardComponent />
     </div>
   );
 }
