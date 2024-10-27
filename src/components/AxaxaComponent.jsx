@@ -3,10 +3,10 @@ import React, { useState, useEffect, useRef } from "react";
 export const AxaxaComponent = () => {
   const initialAxaxaState = "AXAXA";
   const initialIntervalState = 1000;
-  let addedString = "xa";
 
   const [axa, setAxa] = useState(initialAxaxaState);
   const [intervalTime, setIntervalTime] = useState(initialIntervalState);
+  const [addedString, setAddedString] = useState("XA");
 
   const timer = useRef(null);
 
@@ -44,6 +44,11 @@ export const AxaxaComponent = () => {
     handlePlay();
   }
 
+  function handleAdded() {
+    let answer = prompt("Write new added");
+    setAddedString(answer);
+  }
+
   return (
     <div className="axaxa">
       <span>{axa}</span>
@@ -52,6 +57,7 @@ export const AxaxaComponent = () => {
       <button onClick={handlePause}>pause</button>
       <button onClick={handleFaster}>faster</button>
       <button onClick={handleSlower}>slower</button>
+      <button onClick={handleAdded}>text</button>
     </div>
   );
 };
